@@ -17,6 +17,8 @@
 
 #define SUFFIX_MOD ".mod" 
 #define Y_SUFFIX "SUFFIX"
+#define COPY_SUFFIX ".copy"
+#define STR_OR " or "
 
 #define BRANCHING "branching.mod"
 
@@ -26,6 +28,7 @@
 #define ERR_DIR "Error: could not open the directory "
 #define ERR_FILE "Encountered an error in the file: "
 #define ERR_MIS "Error: the file is missing the line: "
+#define ERR_DEL "Error: the file couldn't get deleted correctly: "
 
 #define GLB "output//64GLOBAL.csv"
 #define MDL64 "output//64MDL.csv"

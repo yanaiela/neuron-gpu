@@ -32,6 +32,8 @@ private:
 	// Methods
 	void NameChange();
 
+	//void SetNeuronCommandPath();
+
 public:
 	Hoc_Process(const string& path);
 

@@ -10,6 +10,7 @@
 * The class operation: making a copy of the file, changing it's name, adding
 * a few lines of code at a preposition, and at the end of the file adding 
 * a command that make it close when end to process.
+* Assumes that the INSERT_FILE is found in the same folder
 *************************************************************************/
 
 
@@ -19,6 +20,7 @@
 Hoc_Process::Hoc_Process(const string& path)
 {
 	orig_hoc_path = path;
+	
 	NameChange();
 }
 

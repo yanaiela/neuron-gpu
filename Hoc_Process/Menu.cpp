@@ -18,6 +18,8 @@
 /**/
 
 // Relevant includes of classes being used
+#include "FileEditFromFile.h"
+#include "FileEditFromString.h"
 #include "csv_64MDL_process.h"
 #include "csv_64_var_mapping.h"
 #include "ModFilesGetter.h"
@@ -26,8 +28,11 @@
 #include "ModToFileMap.h"
 #include "csv_64T_Process.h"
 
+#include "FileEditFromFile.h"
 
 #include <iostream>
+
+#define DEFULT_DIR_PATH "d:/Users/Yanai/Desktop/Compiler_Project/Neuron_GPU/Hoc_Process"
 
 /*
 * Constructor.
@@ -40,6 +45,18 @@ Menu::Menu(const string& hoc, const char *directory_path)
 
 void Menu::MenuMain()
 {
+	/*
+
+	// Searching for a specific token to replace it with the full path of the output files
+	FileEditFromString fs = FileEditFromString(DEFULT_DIR_PATH, "hoc_command_insert.txt", "txt", "Insert_Path", 6);
+	fs.Edit();
+
+	string st = fs.GetEditedFile();
+
+	// Searching for a specific token to add to this place in the file commands from another file
+	FileEditFromFile fe = FileEditFromFile(st, "example.hoc", "hoc", "//ADD STUFF HERE", 1, QUIT);
+	fe.Edit();
+	*/
 
 	// Processing the hoc file - the start of it.
 	Hoc_Process hoc = Hoc_Process(hoc_file);
@@ -52,7 +69,7 @@ void Menu::MenuMain()
 
 	// TESTING
 	//csv_64T_Process bla = csv_64T_Process();
-	//bla.Process();
+	//bla.Process;
 
 	// func - processing 64T.csv file for getting the number of departments and compartments
 	{

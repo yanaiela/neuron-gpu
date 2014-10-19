@@ -15,6 +15,9 @@
     <ClCompile Include="csv_64PP_Process.cpp" />
     <ClCompile Include="csv_64T_Process.cpp" />
     <ClCompile Include="csv_64_var_mapping.cpp" />
+    <ClCompile Include="FileEdit.cpp" />
+    <ClCompile Include="FileEditFromFile.cpp" />
+    <ClCompile Include="FileEditFromString.cpp" />
     <ClCompile Include="Hoc_Execution.cpp" />
     <ClCompile Include="Hoc_Process.cpp" />
     <ClCompile Include="main.cpp" />
@@ -28,6 +31,9 @@
     <ClInclude Include="csv_64T_Process.h" />
     <ClInclude Include="csv_64_var_mapping.h" />
     <ClInclude Include="Defs.h" />
+    <ClInclude Include="FileEdit.h" />
+    <ClInclude Include="FileEditFromFile.h" />
+    <ClInclude Include="FileEditFromString.h" />
     <ClInclude Include="Hoc_Exceution.h" />
     <ClInclude Include="Hoc_Process.h" />
     <ClInclude Include="Menu.h" />
