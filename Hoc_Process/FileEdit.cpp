@@ -101,11 +101,11 @@ string FileEdit::GetEditedFile()
 }
 
 
-
-void FileEdit::DeleteFile()
+void FileEdit::DeleteNewFile()
 {
 	if (remove(file_copy.c_str()) != ZERO)
 	{
 		throw runtime_error(ERR_DEL + file_copy);
 	}
 }
+

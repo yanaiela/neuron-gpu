@@ -14,6 +14,7 @@ private:
 	/**
 	* Opening a stream of the file that will be inserted, then just copying it as is to the 
 	* place in the file that is being edited.
+	* Closing the file stream when done.
 	*/
 	void InsertContent();
 	
@@ -35,11 +36,7 @@ public:
 		const string& closing_string = EMPTY)
 		: FileEdit(input_file, file, type, token, num_tokens, closing_string) {}
 
-
-
-
 };
-
 
 
 #endif

@@ -30,9 +30,6 @@
     <ClCompile Include="Hoc_Execution.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Hoc_Process.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -72,9 +69,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Hoc_Exceution.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Hoc_Process.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Menu.h">

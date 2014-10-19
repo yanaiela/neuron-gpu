@@ -16,7 +16,7 @@ private:
 	string hoc_file;
 
 public:
-	Menu(const string& hoc, const char *directory_path = "d:/Users/Yanai/Desktop/Compiler_Project/Writing_To_Hoc/Writing_To_Hoc");
+	Menu(const string &directory_path = "d:/Users/Yanai/Desktop/Compiler_Project/Writing_To_Hoc/Writing_To_Hoc");
 	void MenuMain();
 };
 

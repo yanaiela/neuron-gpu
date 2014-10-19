@@ -1,5 +1,4 @@
 /**
-	
 	A virtual class. Intended to suspport a simple and easy use and override for what ever changes that one would like
 	to make to any writable file.
 	The constructor saves all the variables he's being given to,
@@ -15,8 +14,10 @@
 	if there was a closing line in the constructor, it's being inserted
 	and then closing the stream using CloseStreams.
 
+	There is an extra method - DeleteFile - for deleting the new file that was created for keeping the folder simple.
+
 	@author Yanai Elazar
-	@date: 12.10.14
+	@last modified date: 19.10.14
 */
 
 
@@ -139,7 +140,7 @@ public:
 	* Deleting the new file that was made.
 	* This method is optional, but should be used when the file is not used any more, for keeping the folders simple and clean.
 	*/
-	void DeleteFile();
+	void DeleteNewFile();
 };
 
 

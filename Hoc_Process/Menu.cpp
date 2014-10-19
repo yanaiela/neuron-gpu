@@ -23,46 +23,37 @@
 #include "csv_64MDL_process.h"
 #include "csv_64_var_mapping.h"
 #include "ModFilesGetter.h"
-#include "Hoc_Process.h"
 #include "Hoc_Exceution.h"
 #include "ModToFileMap.h"
 #include "csv_64T_Process.h"
 
-#include "FileEditFromFile.h"
-
 #include <iostream>
 
-#define DEFULT_DIR_PATH "d:/Users/Yanai/Desktop/Compiler_Project/Neuron_GPU/Hoc_Process"
 
 /*
 * Constructor.
 */
-Menu::Menu(const string& hoc, const char *directory_path)
+Menu::Menu(const string &directory_path)
 {
 	dir_path = directory_path;
-	hoc_file = hoc;
 }
 
 void Menu::MenuMain()
 {
-	/*
-
 	// Searching for a specific token to replace it with the full path of the output files
-	FileEditFromString fs = FileEditFromString(DEFULT_DIR_PATH, "hoc_command_insert.txt", "txt", "Insert_Path", 6);
+	FileEditFromString fs = FileEditFromString(DEFULT_DIR_PATH, DEFAULT_HOC_COMMANDS_FILE, TXT, TKN_PATH, 6);
 	fs.Edit();
 
 	string st = fs.GetEditedFile();
 
 	// Searching for a specific token to add to this place in the file commands from another file
-	FileEditFromFile fe = FileEditFromFile(st, "example.hoc", "hoc", "//ADD STUFF HERE", 1, QUIT);
+	FileEditFromFile fe = FileEditFromFile(st, DEFAULT_HOC_FILE, HOC, TKN_HOC_INSRT, 1, QUIT);
 	fe.Edit();
-	*/
 
-	// Processing the hoc file - the start of it.
-	Hoc_Process hoc = Hoc_Process(hoc_file);
-	hoc.Process();
-	string example = hoc.GetNewHocFile();
+	//fs.DeleteNewFile();
 
+
+	string example = fe.GetEditedFile();
 	Hoc_Execution he = Hoc_Execution(example);
 	he.Exectue();
 

@@ -15,7 +15,11 @@ private:
 		return boost::algorithm::contains(line, search_token);
 	}
 
-	// The actual implemented inserting method.
+	/**
+	* The actual implemented inserting method.
+	* Each time this method is called, the stream is on the required line - that will be replaced - so, the token
+	* place is being searched, then the key word - insertion string is being replaced with the token.
+	*/
 	void InsertContent();
 
 public:
@@ -32,3 +36,4 @@ public:
 
 
 #endif
+
