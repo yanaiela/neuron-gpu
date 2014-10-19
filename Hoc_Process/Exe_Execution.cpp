@@ -10,6 +10,14 @@ Exe_Execution::Exe_Execution(const string &exe_path)
 	exe = exe_path;
 }
 
+Exe_Execution::Exe_Execution(const string &exe_path, const string &parameters)
+{
+	string param = parameters;
+
+	// adding the params to the current exe path
+	exe = exe_path + " " + param.c_str();
+
+}
 
 void Exe_Execution::Exectue()
 {
@@ -18,11 +26,3 @@ void Exe_Execution::Exectue()
 
 }
 
-void Exe_Execution::AddParams(const string &parameters)
-{
-	string param = parameters;
-
-	// adding the params to the current exe path
-	exe = exe + " " + param.c_str();
-
-}

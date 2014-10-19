@@ -60,8 +60,7 @@ void Menu::MenuMain()
 
 		string hoc_file = file_edit_ff.GetEditedFile();
 		// The hoc execution using neuron
-		Exe_Execution hoc_exe = Exe_Execution(NRN_PATH);
-		hoc_exe.AddParams(hoc_file);
+		Exe_Execution hoc_exe = Exe_Execution(NRN_PATH, hoc_file);
 		hoc_exe.Exectue();
 
 
