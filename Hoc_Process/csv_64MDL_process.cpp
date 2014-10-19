@@ -12,8 +12,7 @@
 // Constructor
 csv64MDL_process::csv64MDL_process()
 {
-	count = -1; // Assuming the count in the vector is starting from 0.
-
+	count = INIT; // Assuming the count in the vector is starting from 0.
 	mod = MOD; // every module regex
 }
 

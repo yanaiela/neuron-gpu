@@ -7,7 +7,7 @@
 #include "csv_64MDL_process.h"
 #include "csv_64_var_mapping.h"
 #include "ModFilesGetter.h"
-#include "Hoc_Exceution.h"
+#include "Exe_Execution.h"
 #include "ModToFileMap.h"
 #include "csv_64T_Process.h"
 
@@ -60,7 +60,8 @@ void Menu::MenuMain()
 
 		string hoc_file = file_edit_ff.GetEditedFile();
 		// The hoc execution using neuron
-		Hoc_Execution hoc_exe = Hoc_Execution(hoc_file);
+		Exe_Execution hoc_exe = Exe_Execution(NRN_PATH);
+		hoc_exe.AddParams(hoc_file);
 		hoc_exe.Exectue();
 
 
@@ -74,7 +75,7 @@ void Menu::MenuMain()
 
 	// TODO: func - processing 64T.csv file for getting the number of departments and compartments for the next step (instead of the magic number '3')
 	{
-		// Processing the global file
+		// Processing the global and 64mdl files
 		csv_64_var_mapping c1 = csv_64_var_mapping(GLB, 3); // TODO - need to get the number of compartments
 		csv_64_var_mapping c2 = csv_64_var_mapping(MDL64, 3); // - " -
 		c1.Process();

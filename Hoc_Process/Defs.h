@@ -2,6 +2,7 @@
 * This is a definition file that supposed to define a common language for the project.
 */
 
+#define INIT -1
 #define NOT_FOUND 0
 #define EQUALS 0
 #define ZERO 0
@@ -39,6 +40,8 @@
 #define T64 "output//64T.csv"
 
 // Resources Files
+
+#define NRN_PATH "C:/nrn73w64/bin64/nrniv.exe"
 
 // (Relative pathes).
 #define DEFAULT_HOC_FILE "resources/example.hoc" 

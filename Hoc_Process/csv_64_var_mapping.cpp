@@ -6,9 +6,10 @@ csv_64_var_mapping::csv_64_var_mapping(const string &src_file, int dep_num)
 {
 	file_name = src_file;
 	num = dep_num;
+
 	// Initiallizing the counter to -1, so that the insertion to the stack will
 	// begin from 0.
-	counter = -1;
+	counter = INIT;
 }
 
 
@@ -45,15 +46,15 @@ void csv_64_var_mapping::FindVars()
 
 		else
 		{
-			string s = Split(line).first;
+			string str = Split(line).first;
 
-			// Checking if the key exists
-			if (params.count(s) == 0) {
+			// Checking if the key exists. If not, getting in and adding it to the map.
+			if (params.count(str) == NOT_FOUND) {
 
 				// Creating the [double] vector for each param. initiallizing them with NaN.
 				vector<double> arr(num, numeric_limits<double>::signaling_NaN());
 
-				params.insert({ s, arr });
+				params.insert({ str, arr });
 			}
 		}
 	}
@@ -117,6 +118,7 @@ pair<string, double> Split(const string& input, const string& separators, bool r
 
 	vector<string> v;
 	ostringstream word;
+
 	for (size_t n = 0; n < input.size(); ++n)
 	{
 		if (string::npos == separators.find(input[n]))
@@ -125,7 +127,7 @@ pair<string, double> Split(const string& input, const string& separators, bool r
 		{
 			if (!word.str().empty() || !remove_empty)
 				v.push_back(word.str());
-			word.str("");
+			word.str(EMPTY);
 		}
 	}
 	if (!word.str().empty() || !remove_empty)

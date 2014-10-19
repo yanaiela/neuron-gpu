@@ -1,3 +1,10 @@
+/**
+	This class is being constructed from the getNsegsMat function in matlab.
+
+	@author Yanai Elazar
+	@last mosified date: 
+*/
+
 #ifndef CSV_64T_PROCESS_H
 #define CSV_64T_PROCESS_H
 
