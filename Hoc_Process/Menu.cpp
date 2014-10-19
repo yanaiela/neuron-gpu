@@ -1,8 +1,21 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include "Menu.h"
+// Relevant includes of classes being used
+#include "FileEditFromFile.h"
+#include "FileEditFromString.h"
+#include "csv_64MDL_process.h"
+#include "csv_64_var_mapping.h"
+#include "ModFilesGetter.h"
+#include "Hoc_Exceution.h"
+#include "ModToFileMap.h"
+#include "csv_64T_Process.h"
+
+#include <iostream>
+
 
 /**/
+
 #include <vld.h> // FOR LEAKS
 
 #define _CRTDBG_MAP_ALLOC 
@@ -17,17 +30,7 @@
 //_crtBreakAlloc = 144; // should be inside the file. prefare at the start, when it finds the number of allocation, it will break there
 /**/
 
-// Relevant includes of classes being used
-#include "FileEditFromFile.h"
-#include "FileEditFromString.h"
-#include "csv_64MDL_process.h"
-#include "csv_64_var_mapping.h"
-#include "ModFilesGetter.h"
-#include "Hoc_Exceution.h"
-#include "ModToFileMap.h"
-#include "csv_64T_Process.h"
 
-#include <iostream>
 
 
 /*

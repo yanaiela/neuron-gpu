@@ -1,11 +1,7 @@
-#define _CRT_SECURE_NO_WARNINGS
-
 #include "Menu.h"
 #include "Defs.h"
 
-
-
-
+// TODO - maby to get the dir path with the args.
 
 int main(int argc, char *argv[])
 {

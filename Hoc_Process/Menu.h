@@ -11,7 +11,6 @@ class Menu
 
 private:
 	string dir_path;
-	string hoc_file;
 
 public:
 	Menu(const string &directory_path);
