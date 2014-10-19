@@ -7,7 +7,7 @@
 
 
 
-int main()
+int main(int argc, char *argv[])
 {
 
 	Menu menu = Menu(DEFULT_DIR_PATH);
