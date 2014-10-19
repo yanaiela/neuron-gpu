@@ -92,8 +92,5 @@
     <ClInclude Include="FileEditFromString.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="try.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

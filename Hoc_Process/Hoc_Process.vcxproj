@@ -37,7 +37,6 @@
     <ClInclude Include="Menu.h" />
     <ClInclude Include="ModFilesGetter.h" />
     <ClInclude Include="ModToFileMap.h" />
-    <ClInclude Include="try.h" />
     <ClInclude Include="vld.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
