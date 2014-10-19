@@ -24,7 +24,6 @@ void Hoc_Execution::Exectue()
 
 	// Executing the edited hoc file with neuron (nrniv.exe)
 	system(path_and_params);
-	//delete(s);
-	//system("C:\\nrn73w64\\bin64\\nrniv.exe example.copy.hoc");
+
 }
 

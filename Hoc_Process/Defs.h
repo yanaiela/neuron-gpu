@@ -55,6 +55,11 @@
 #define TKN_HOC_INSRT "//ADD STUFF HERE"
 
 /***************************** Paths *****************************/
+
+/************************** IMPORTANT **************************** !!!!!!!!!!!!!!!!!!!!!!!!
+* This path should be modified when changing computers.
+* TODO - get this path in the constructor.
+*/
 #define DEFULT_DIR_PATH "d:/Users/Yanai/Desktop/Compiler_Project/Neuron_GPU/Hoc_Process"
 
 

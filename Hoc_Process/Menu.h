@@ -1,5 +1,3 @@
-
-
 #ifndef MENU_H
 #define MENU_H
 
@@ -16,7 +14,7 @@ private:
 	string hoc_file;
 
 public:
-	Menu(const string &directory_path = "d:/Users/Yanai/Desktop/Compiler_Project/Writing_To_Hoc/Writing_To_Hoc");
+	Menu(const string &directory_path);
 	void MenuMain();
 };
 
@@ -24,3 +22,4 @@ public:
 
 
 #endif
+

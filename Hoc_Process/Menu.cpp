@@ -41,21 +41,21 @@ Menu::Menu(const string &directory_path)
 void Menu::MenuMain()
 {
 	// Searching for a specific token to replace it with the full path of the output files
-	FileEditFromString fs = FileEditFromString(DEFULT_DIR_PATH, DEFAULT_HOC_COMMANDS_FILE, TXT, TKN_PATH, 6);
-	fs.Edit();
+	FileEditFromString file_edit_fs = FileEditFromString(DEFULT_DIR_PATH, DEFAULT_HOC_COMMANDS_FILE, TXT, TKN_PATH, 6);
+	file_edit_fs.Edit();
 
-	string st = fs.GetEditedFile();
+	string str = file_edit_fs.GetEditedFile();
 
 	// Searching for a specific token to add to this place in the file commands from another file
-	FileEditFromFile fe = FileEditFromFile(st, DEFAULT_HOC_FILE, HOC, TKN_HOC_INSRT, 1, QUIT);
-	fe.Edit();
+	FileEditFromFile file_edit_ff = FileEditFromFile(str, DEFAULT_HOC_FILE, HOC, TKN_HOC_INSRT, 1, QUIT);
+	file_edit_ff.Edit();
 
-	//fs.DeleteNewFile();
+	file_edit_fs.DeleteNewFile();
 
 
-	string example = fe.GetEditedFile();
-	Hoc_Execution he = Hoc_Execution(example);
-	he.Exectue();
+	string hoc_file = file_edit_ff.GetEditedFile();
+	Hoc_Execution hoc_exe = Hoc_Execution(hoc_file);
+	hoc_exe.Exectue();
 
 
 	// TESTING
@@ -66,7 +66,7 @@ void Menu::MenuMain()
 	{
 		// Processing the global file
 		csv_64_var_mapping c1 = csv_64_var_mapping(GLB, 3); // TODO - need to get the number of compartments
-		csv_64_var_mapping c2 = csv_64_var_mapping(MDL64, 3);
+		csv_64_var_mapping c2 = csv_64_var_mapping(MDL64, 3); // - " -
 		c1.Process();
 		map<string, vector<double>> ff = c1.GetMap();
 
