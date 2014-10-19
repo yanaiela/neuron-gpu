@@ -1,18 +1,6 @@
 #include "csv_64_var_mapping.h"
 
 
-/************************************************************************
-* Class name: csv_64_var_mapping
-* The Input: the number of departments
-* The class operation: The class main activity is to  go over the Global
-* and the MDL file and map all the variables of the file to a vector of
-* their values arranged by their department arrangment.
-* Overall the algo runs over the file twice, which is not very efficient
-* but it is sufficient for now....
-* TODO maby to make it more generic to suuport also the reading of the mdl file.
-*************************************************************************/
-
-
 // Constructor.
 csv_64_var_mapping::csv_64_var_mapping(const string &src_file, int dep_num)
 {
@@ -38,15 +26,15 @@ void csv_64_var_mapping::Process()
 void csv_64_var_mapping::FindVars()
 {
 	// Opening the glb file
-	src_glb.open(file_name);
-	if (!src_glb.is_open())
+	src.open(file_name);
+	if (!src.is_open())
 	{
 		throw runtime_error(ERR_FO + string(file_name));
 	}
 
 	string line;
 
-	while (getline(src_glb, line))
+	while (getline(src, line))
 	{
 		// If finding a comment, that means that we passed a compartment
 		if (line.front() == COMMENT_C)
@@ -69,7 +57,7 @@ void csv_64_var_mapping::FindVars()
 			}
 		}
 	}
-	src_glb.close();
+	src.close();
 }
 
 
@@ -78,15 +66,15 @@ void csv_64_var_mapping::InsertVals()
 {
 	
 	// Opening the glb file
-	src_glb.open(file_name);
-	if (!src_glb.is_open())
+	src.open(file_name);
+	if (!src.is_open())
 	{
 		throw runtime_error(ERR_FO + string(file_name));
 	}
 
 	string line;
 
-	while (getline(src_glb, line))
+	while (getline(src, line))
 	{
 		// If finding a comment, that means that we passed a compartment
 		if (line.substr(0, 1).compare(COMMENT_S) == EQUALS)
@@ -109,7 +97,7 @@ void csv_64_var_mapping::InsertVals()
 
 		}
 	}
-	src_glb.close();
+	src.close();
 }
 
 // Returning the mapping.
@@ -145,17 +133,4 @@ pair<string, double> Split(const string& input, const string& separators, bool r
 
 	return pair<string, double>(v.front(), atof(v.back().c_str()));
 }
-/*
-pair<string, double> csv_64_GLOBAL_process::ExtrStrNNum(const string &line)
-{
-string buf; // Have a buffer string
-stringstream ss(line); // Insert the string into a stream
-vector<string> tokens; // Create vector to hold our words
-
-while (ss >> buf)
-tokens.push_back(buf);
-
-// 0 is the string (var), 1 is the '=' sign, and 2 is the number (double)
-return pair<string, double>(tokens.at(0), atof(tokens.at(2).c_str()));
-}*/
 

@@ -40,29 +40,36 @@ Menu::Menu(const string &directory_path)
 
 void Menu::MenuMain()
 {
-	// Searching for a specific token to replace it with the full path of the output files
-	FileEditFromString file_edit_fs = FileEditFromString(DEFULT_DIR_PATH, DEFAULT_HOC_COMMANDS_FILE, TXT, TKN_PATH, 6);
-	file_edit_fs.Edit();
+	/**  Pre processing. Taking care of files that are being used in the activity of neuron. */
+	{
+		// Searching for a specific token to replace it with the full path of the output files
+		FileEditFromString file_edit_fs = FileEditFromString(DEFULT_DIR_PATH, DEFAULT_HOC_COMMANDS_FILE, TXT, TKN_PATH, 6);
+		file_edit_fs.Edit();
 
-	string str = file_edit_fs.GetEditedFile();
+		string str = file_edit_fs.GetEditedFile();
 
-	// Searching for a specific token to add to this place in the file commands from another file
-	FileEditFromFile file_edit_ff = FileEditFromFile(str, DEFAULT_HOC_FILE, HOC, TKN_HOC_INSRT, 1, QUIT);
-	file_edit_ff.Edit();
+		// Searching for a specific token to add to this place in the file commands from another file
+		FileEditFromFile file_edit_ff = FileEditFromFile(str, DEFAULT_HOC_FILE, HOC, TKN_HOC_INSRT, 1, QUIT);
+		file_edit_ff.Edit();
 
-	file_edit_fs.DeleteNewFile();
+		file_edit_fs.DeleteNewFile();
 
 
-	string hoc_file = file_edit_ff.GetEditedFile();
-	Hoc_Execution hoc_exe = Hoc_Execution(hoc_file);
-	hoc_exe.Exectue();
+		string hoc_file = file_edit_ff.GetEditedFile();
+		// The hoc execution using neuron
+		Hoc_Execution hoc_exe = Hoc_Execution(hoc_file);
+		hoc_exe.Exectue();
 
+
+		// After the hoc executiong, this file is not needed anymore
+		file_edit_ff.DeleteNewFile();
+	}
 
 	// TESTING
 	//csv_64T_Process bla = csv_64T_Process();
 	//bla.Process;
 
-	// func - processing 64T.csv file for getting the number of departments and compartments
+	// TODO: func - processing 64T.csv file for getting the number of departments and compartments for the next step (instead of the magic number '3')
 	{
 		// Processing the global file
 		csv_64_var_mapping c1 = csv_64_var_mapping(GLB, 3); // TODO - need to get the number of compartments
@@ -74,7 +81,6 @@ void Menu::MenuMain()
 		map<string, vector<double>> ff2 = c2.GetMap();
 	}
 
-	//cout << "hi";
 
 	//Finding the files in the dir
 	vector<string> v;
@@ -86,8 +92,6 @@ void Menu::MenuMain()
 	mtf.Process();
 
 	vector<pair<string, string>> vv = mtf.GetMap();
-
-	
 
 
 	// Processing the MDL file

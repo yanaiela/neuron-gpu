@@ -1,4 +1,6 @@
 /**
+	@name FileEdit
+
 	A virtual class. Intended to suspport a simple and easy use and override for what ever changes that one would like
 	to make to any writable file.
 	The constructor saves all the variables he's being given to,

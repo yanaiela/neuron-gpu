@@ -1,3 +1,16 @@
+/**
+	@name csv_64_var_mapping
+
+	The Input: the number of departments
+	The class operation: The class main activity is to  go over the Global and the MDL file and to map all
+	of the variables of the file to a vector of their values arranged by their department arrangment.
+	Overall the algo runs over the file twice, which is not very efficient but it is sufficient for now....
+
+	 @author Yanai Elazar
+	 @last modified date: 19.10.14
+*/
+
+
 #include "Defs.h"
 
 #include <iostream>
@@ -19,21 +32,19 @@ private:
 
 	// Members
 	map<string, vector<double>> params;
-	ifstream src_glb;
+	ifstream src;
 	string file_name;
 	int num;
 	int counter;
 
 
 	// Methods
-	//pair<string, double> ExtrStrNNum(const string &line);
 	void FindVars();
 	void InsertVals();
 
 public:
 
 	csv_64_var_mapping(const string &src_file, int dep_num);
-	//~csv_64_GLOBAL_process();
 
 	void Process();
 	map<string, vector<double>> GetMap();

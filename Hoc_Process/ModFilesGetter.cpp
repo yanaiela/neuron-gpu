@@ -4,8 +4,6 @@
 // In this case, it's the definition of the file.
 
 
-
-
 /************************************************************************
 * Class name: ModFilesGetter
 * The Input: None
@@ -15,7 +13,6 @@
 * The FindFiles method finds all the files in the current dir (and not folders),
 * although this can be changes easily.
 *************************************************************************/
-
 
 
 /*

@@ -1,20 +1,10 @@
 #include "csv_64MDL_process.h"
 
 
-/************************************************************************
-* Class name: csv_64MDL_process
-* The Input: None
-* The class operation: goes over the 64mdl file and looks for every model in it.
-* it make a vector that contains all the departments in the moduel, then inside that,
-* match the name of the module to a set of the module inside it.
-* The function is still a bit slow, probably because of the 'mod' regex that is
-* being used in the process method.
-* Exception: if the class doesn't find the corresponding file at the Process method,
-* a runtime error will be thrown
-*************************************************************************/
+
 
 /*
-* The process function takes much too long (26 sec)
+* The process function takes much too long 
 * it's probably a matter of the regex or the function
 * that use it
 */
@@ -64,7 +54,6 @@ void csv64MDL_process::Process()
 			pair<string, set<string>> p(line.erase(0, 1), s); // Deleting the '#' char
 
 			g_info.push_back(p);
-			//vec.at(count).second.insert("hi");
 			count++;
 		}
 		// If finding an ion suffix
@@ -85,10 +74,11 @@ void csv64MDL_process::Process()
 		}
 	}
 
-	// TODO DELETE
-	clock_t end = clock();
-	double elapsed_secs = double(end - begin) / CLOCKS_PER_SEC;
-	cout << elapsed_secs; // DELETE
+	{ // TODO DELETE
+		clock_t end = clock();
+		double elapsed_secs = double(end - begin) / CLOCKS_PER_SEC;
+		cout << elapsed_secs;
+	}
 
 	// Closing the stream
 	src.close();
