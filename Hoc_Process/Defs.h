@@ -1,7 +1,14 @@
 /*
-* This is a definition file that supposed to define a common language for the project.
+	This is a definition file that defines a common language for the project.
+
+	@author - Yanai Elazar
+	@last date modified - 21.10.2014
+
 */
 
+#pragma once
+
+/***************************** General Defs *****************************/
 #define INIT -1
 #define NOT_FOUND 0
 #define EQUALS 0
@@ -21,7 +28,11 @@
 #define COPY_SUFFIX ".copy"
 #define STR_OR " or "
 
+#define QUIT "quit()" // hoc command.
 
+/***************************** Tokens *****************************/
+#define TKN_PATH "Insert_Path"
+#define TKN_HOC_INSRT "//ADD STUFF HERE"
 
 /***************************** Errors *****************************/
 
@@ -52,10 +63,6 @@
 #define HOC "hoc"
 #define TXT "txt"
 
-
-/***************************** Tokens *****************************/
-#define TKN_PATH "Insert_Path"
-#define TKN_HOC_INSRT "//ADD STUFF HERE"
 
 /***************************** Paths *****************************/
 

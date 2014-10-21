@@ -32,8 +32,6 @@
 #include <string>
 #include "Defs.h"
 
-#define QUIT "quit()" // hoc command.
-
 
 using namespace std;
 

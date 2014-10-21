@@ -4,6 +4,9 @@
 
 	This class uses the system built in function to execute the exe, so it could be dangerous,
 	so the user should know what he's doing.
+
+	@author - Yanai Elazar
+	@last date modified - 21.10.2014
 */
 
 #ifndef HOC_EXECUTION_H
@@ -11,7 +14,6 @@
 
 #include <iostream>
 #include <string>
-
 
 using namespace std;
 
