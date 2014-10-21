@@ -102,7 +102,7 @@ protected:
 
 public:
 
-	/*
+	/**
 	* Constructor.
 	*
 	* @param input_src - the input source which the content is being extracted from. It's a kind of an abstract variable.

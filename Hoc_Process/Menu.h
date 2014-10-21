@@ -16,6 +16,12 @@ private:
 	string dir_path;
 
 public:
+
+	/**
+		Constructor.
+		@param directory_path - The current directory where the program runs. It is used for finding the
+			mod files
+	*/
 	Menu(const string &directory_path);
 	void MenuMain();
 };
