@@ -92,5 +92,8 @@
     <ClInclude Include="Exe_Execution.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="trial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
