@@ -7,8 +7,8 @@
 
 int main(int argc, char *argv[])
 {
-	/*vector<int> a = { 1, 2, 0, 3, -6, 2 };
-	vector<int> b = { 0, 2, 5 };
+	vector<int> a = { 1, 2, 0, 3, -6, 2 };
+	/*vector<int> b = { 0, 2, 5 };
 
 	/*HocHelpFunc::VectorComparison(a, b);
 	HocHelpFunc::SubVector(a, 2, 5);
@@ -20,6 +20,7 @@ int main(int argc, char *argv[])
 	int j = i[2];
 	HocHelpFunc::VectorSmallerEqualsComparison(a, b);*/
 
+	HocHelpFunc::Find(a);
 
 	Menu menu = Menu(DEFULT_DIR_PATH);
 	menu.MenuMain();

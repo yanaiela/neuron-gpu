@@ -111,7 +111,7 @@ void csv_64T_Process::Process()
 
 				if (end_of_tree.size() != ZERO)
 				{
-					for (int i = 0; i < end_of_tree.size(); i++)
+					for (size_t i = 0; i < end_of_tree.size(); i++)
 					{
 						end_of_tree[i] -= ONE;
 					}
@@ -129,7 +129,7 @@ void csv_64T_Process::Process()
 				vector<int> childs_inds = HocHelpFunc::Find(HocHelpFunc::VectorSmallerEqualsComparison(
 					HocHelpFunc::SubVector(apos, type_ind, end_of_tree[0] - ONE), // TODO not sure end_of_tree[0] is the right translate from matlab
 					node_break + ONE));
-				for (int i = 0; i < childs_inds.size(); i++)
+				for (size_t i = 0; i < childs_inds.size(); i++)
 				{
 					childs_inds[i] += type_ind;
 				}
@@ -144,10 +144,25 @@ void csv_64T_Process::Process()
 
 				vector<int> adopted;
 
-				for (int i = 0; i < childs_inds.size(); i++)
+				for (size_t i = 0; i < childs_inds.size(); i++)
 				{
 					int cur_ind = childs_inds[i];
+					vector<int> true_parent = HocHelpFunc::Find(HocHelpFunc::VectorSmallerComparison(
+						HocHelpFunc::SubVector(apos, type_ind - ONE, cur_ind - ONE), // cur_ind - maby -2. TODO
+						apos[cur_ind]));
+					temp.clear();
+					for (int j = 0; j < true_parent.size(); j++)
+					{
+						temp.push_back(true_parent[j] + type_ind);
+					}
+					true_parent = HocHelpFunc::Find(HocHelpFunc::VectorSmallerComparison(
+						apos[cur_ind], HocHelpFunc::SubVector(breaks, temp)));
 
+					if (HocHelpFunc::Find(HocHelpFunc::VectorSmallerComparison(ONE, true_parent)).size() != ZERO)
+					{
+						adopted.push_back(i);
+					}
+					
 				}
 			}
 		}
