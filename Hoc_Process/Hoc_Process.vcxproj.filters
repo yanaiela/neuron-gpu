@@ -51,6 +51,9 @@
     <ClCompile Include="Exe_Execution.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="HocHelpFunc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="csv_64_var_mapping.h">
@@ -92,7 +95,7 @@
     <ClInclude Include="Exe_Execution.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="trial.h">
+    <ClInclude Include="HocHelpFunc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

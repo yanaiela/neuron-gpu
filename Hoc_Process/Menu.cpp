@@ -11,6 +11,8 @@
 #include "ModToFileMap.h"
 #include "csv_64T_Process.h"
 
+#include "csv_64PP_Process.h"
+
 #include <iostream>
 
 
@@ -43,6 +45,11 @@ Menu::Menu(const string &directory_path)
 
 void Menu::MenuMain()
 {
+	// TESTING
+	csv_64T_Process bla = csv_64T_Process();
+	bla.Process();
+
+
 	/**  Pre processing. Taking care of files that are being used in the activity of neuron. */
 	{
 		// Searching for a specific token to replace it with the full path of the output files
@@ -70,7 +77,28 @@ void Menu::MenuMain()
 
 	// TESTING
 	//csv_64T_Process bla = csv_64T_Process();
-	//bla.Process;
+	//bla.Process();
+
+	//int n_seg_mat[3] = { 2, 29, 29 }; // TODO - this is temporary, until getting it from the T process.
+
+	//int comp_segs_ind_arr[3][2] = { 0 };
+	//int seg_ind = 1;
+
+	//for (int i = 0; i < 3; i++)
+	//{
+	//	seg_ind += 1;
+	//	comp_segs_ind_arr[i][0] = seg_ind;
+	//	seg_ind = seg_ind + n_seg_mat[i] - 1;
+	//	comp_segs_ind_arr[i][1] = seg_ind;
+	//	seg_ind += 1;
+	//}
+
+	//csv_64PP_Process csv64 = csv_64PP_Process(n_seg_mat, comp_segs_ind_arr);
+	//csv64.Process();
+	// TESTING UNTIL HERE
+
+
+
 
 	// TODO: func - processing 64T.csv file for getting the number of departments and compartments for the next step (instead of the magic number '3')
 	{
