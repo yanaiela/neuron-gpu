@@ -54,6 +54,9 @@
     <ClCompile Include="HocHelpFunc.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="HocTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="csv_64_var_mapping.h">
@@ -96,6 +99,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="HocHelpFunc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HocTests.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

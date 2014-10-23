@@ -48,9 +48,9 @@ void Menu::MenuMain()
 	// TESTING
 	csv_64T_Process bla = csv_64T_Process();
 	bla.Process();
+	vector<float> vec = bla.GetCompParams();
 
-
-	/**  Pre processing. Taking care of files that are being used in the activity of neuron. */
+	/**  Preprocessing. Taking care of files that are being used in the activity of neuron. */
 	{
 		// Searching for a specific token to replace it with the full path of the output files
 		FileEditFromString file_edit_fs = FileEditFromString(DEFULT_DIR_PATH, DEFAULT_HOC_COMMANDS_FILE, TXT, TKN_PATH, 6);
@@ -71,7 +71,7 @@ void Menu::MenuMain()
 		hoc_exe.Exectue();
 
 
-		// After the hoc executiong, this file is not needed anymore
+		// After the hoc execution, this file is not needed anymore
 		file_edit_ff.DeleteNewFile();
 	}
 

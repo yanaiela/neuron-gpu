@@ -10,9 +10,6 @@ using namespace std;
 
 class HocHelpFunc
 {
-private:
-
-
 
 public:
 
@@ -61,6 +58,16 @@ public:
 	*/
 	static vector<int> SubVector(vector<int> vec, int from, int to);
 	static vector<int> SubVector(vector<int> vec, vector<int> indices_vec);
+
+	/**
+		Flips the vector so that the first element will be the last
+		and so forth...
+	*/
+	static vector<int> FlipLr(vector<int> vec);
+
+	static vector<int> ConnectVectors(vector<int> vec1, vector<int> vec2);
+
+	static vector<int> HomoVecNum(int size, int num);
 };
 
 

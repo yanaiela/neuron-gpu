@@ -21,7 +21,9 @@
 #define COMMENT_S "#" // for string
 #define COMMENT_C '#' // for char
 #define Y_SPACE " "
+#define C_SPACE ' '
 #define EMPTY ""
+#define C_COMMA ','
 
 #define SUFFIX_MOD ".mod" 
 #define Y_SUFFIX "SUFFIX"

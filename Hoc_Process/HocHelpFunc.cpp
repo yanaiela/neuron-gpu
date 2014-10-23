@@ -215,10 +215,42 @@ vector<int> HocHelpFunc::SubVector(vector<int> vec, vector<int> indices_vec)
 	return sub_vec;
 }
 
+/*******************/
+
+vector<int> HocHelpFunc::FlipLr(vector<int> vec)
+{
+	vector<int> swap;
+
+	for (int i = vec.size() - 1; i >= ZERO; i--)
+	{
+		swap.push_back(vec[i]);
+	}
+
+	return swap;
+}
 
 
+vector<int> HocHelpFunc::ConnectVectors(vector<int> vec1, vector<int> vec2)
+{
+	for (size_t i = 0; i < vec2.size(); i++)
+	{
+		vec1.push_back(vec2[i]);
+	}
+	return vec1;
+}
 
-
+/**
+	Kind of the Ones funtion in matlab
+*/
+vector<int> HocHelpFunc::HomoVecNum(int size, int num)
+{
+	vector<int> vec(size);
+	for (int i = 0; i < size; i++)
+	{
+		vec[i] = num;
+	}
+	return vec;
+}
 
 
 

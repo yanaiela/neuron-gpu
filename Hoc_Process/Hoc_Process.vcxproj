@@ -20,6 +20,7 @@
     <ClCompile Include="FileEditFromString.cpp" />
     <ClCompile Include="Exe_Execution.cpp" />
     <ClCompile Include="HocHelpFunc.cpp" />
+    <ClCompile Include="HocTests.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="ModFilesGetter.cpp" />
@@ -36,6 +37,7 @@
     <ClInclude Include="FileEditFromString.h" />
     <ClInclude Include="Exe_Execution.h" />
     <ClInclude Include="HocHelpFunc.h" />
+    <ClInclude Include="HocTests.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="ModFilesGetter.h" />
     <ClInclude Include="ModToFileMap.h" />
