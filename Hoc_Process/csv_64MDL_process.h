@@ -2,7 +2,7 @@
 	Class name: csv_64MDL_process
 	The Input: None
 	The class operation: goes over the 64mdl file and looks for every model in it.
-	it make a vector that contains all the departments in the moduel, then inside that,
+	it make a vector that contains all the departments in the model, then inside that,
 	match the name of the module to a set of the module inside it.
 	The function is still a bit slow, probably because of the 'mod' regex that is
 	being used in the process method.

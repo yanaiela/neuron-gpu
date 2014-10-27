@@ -45,39 +45,37 @@ Menu::Menu(const string &directory_path)
 
 void Menu::MenuMain()
 {
-	// TESTING
-	csv_64T_Process bla = csv_64T_Process();
-	bla.Process();
-	vector<float> vec = bla.GetCompParams();
+	
 
 	/**  Preprocessing. Taking care of files that are being used in the activity of neuron. */
-	{
-		// Searching for a specific token to replace it with the full path of the output files
-		FileEditFromString file_edit_fs = FileEditFromString(DEFULT_DIR_PATH, DEFAULT_HOC_COMMANDS_FILE, TXT, TKN_PATH, 6);
-		file_edit_fs.Edit();
+	
+	// Searching for a specific token to replace it with the full path of the output files
+	FileEditFromString file_edit_fs = FileEditFromString(DEFULT_DIR_PATH, DEFAULT_HOC_COMMANDS_FILE, TXT, TKN_PATH, 6);
+	file_edit_fs.Edit();
 
-		string str = file_edit_fs.GetEditedFile();
+	string hoc_edit = file_edit_fs.GetEditedFile();
 
-		// Searching for a specific token to add to this place in the file commands from another file
-		FileEditFromFile file_edit_ff = FileEditFromFile(str, DEFAULT_HOC_FILE, HOC, TKN_HOC_INSRT, 1, QUIT);
-		file_edit_ff.Edit();
+	// Searching for a specific token to add to this place in the file commands from another file
+	FileEditFromFile file_edit_ff = FileEditFromFile(hoc_edit, DEFAULT_HOC_FILE, HOC, TKN_HOC_INSRT, 1, QUIT);
+	file_edit_ff.Edit();
 
-		file_edit_fs.DeleteNewFile();
-
-
-		string hoc_file = file_edit_ff.GetEditedFile();
-		// The hoc execution using neuron
-		Exe_Execution hoc_exe = Exe_Execution(NRN_PATH, hoc_file);
-		hoc_exe.Exectue();
+	file_edit_fs.DeleteNewFile();
 
 
-		// After the hoc execution, this file is not needed anymore
-		file_edit_ff.DeleteNewFile();
-	}
+	string hoc_file = file_edit_ff.GetEditedFile();
+	// The hoc execution using neuron
+	Exe_Execution hoc_exe = Exe_Execution(NRN_PATH, hoc_file);
+	hoc_exe.Exectue();
 
-	// TESTING
-	//csv_64T_Process bla = csv_64T_Process();
-	//bla.Process();
+
+	// After the hoc execution, this file is not needed anymore
+	file_edit_ff.DeleteNewFile();
+	//////////////////////////
+
+	csv_64T_Process t64 = csv_64T_Process();
+	t64.Process();
+	vector<float> vec = t64.GetCompParams();
+
 
 	//int n_seg_mat[3] = { 2, 29, 29 }; // TODO - this is temporary, until getting it from the T process.
 
@@ -97,33 +95,30 @@ void Menu::MenuMain()
 	//csv64.Process();
 	// TESTING UNTIL HERE
 
+	
+	// Processing the global and 64mdl files
+	csv_64_var_mapping glb64 = csv_64_var_mapping(GLB, vec.size());
+	csv_64_var_mapping mdl64 = csv_64_var_mapping(MDL64, vec.size());
+	glb64.Process();
+	map<string, vector<double>> glb_params = glb64.GetMap();
 
-
-
-	// TODO: func - processing 64T.csv file for getting the number of departments and compartments for the next step (instead of the magic number '3')
-	{
-		// Processing the global and 64mdl files
-		csv_64_var_mapping c1 = csv_64_var_mapping(GLB, 3); // TODO - need to get the number of compartments
-		csv_64_var_mapping c2 = csv_64_var_mapping(MDL64, 3); // - " -
-		c1.Process();
-		map<string, vector<double>> ff = c1.GetMap();
-
-		c2.Process();
-		map<string, vector<double>> ff2 = c2.GetMap();
-	}
+	mdl64.Process();
+	map<string, vector<double>> mdl_params = mdl64.GetMap();
+	//////////////////////////
 
 
 	//Finding the files in the dir
-	vector<string> v;
-	ModFilesGetter fg = ModFilesGetter(dir_path.c_str());
-	fg.FindFiles();
-	v = fg.GetFilesFromDir();
+	ModFilesGetter files_getter = ModFilesGetter(dir_path.c_str());
+	files_getter.FindFiles();
+	vector<string> files_vec = files_getter.GetFilesFromDir();
 
-	ModToFileMap mtf = ModToFileMap(v);
+	// Mod files.
+	
+	ModToFileMap mtf = ModToFileMap(files_vec);
 	mtf.Process();
 
-	vector<pair<string, string>> vv = mtf.GetMap();
-
+	vector<pair<string, string>> mod2files = mtf.GetMap();
+	////////////////////
 
 	// Processing the MDL file
 	csv64MDL_process s = csv64MDL_process();
@@ -137,8 +132,6 @@ void Menu::MenuMain()
 	cerr << re.what();
 
 	}
-
-	
 
 	_CrtDumpMemoryLeaks();
 }
